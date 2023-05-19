@@ -6,6 +6,7 @@ import trailersSlice from "./Reducer/detailReducer/TrailarsDetailPageSlice";
 import moreSlice from "./Reducer/detailReducer/MorePageSlice";
 import moreDegSlice from "./Reducer/detailReducer/MoreDetailSlice";
 import searchSlice from "./Reducer/search/SearchReducer";
+import regSlice from "./Reducer/detailReducer/RecommendationsSlice";
 
 const rootReducer = combineReducers({
     movieSlice,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     moreSlice,
     moreDegSlice,
     searchSlice,
+    regSlice,
 })
 
 export const setupStore = () => {

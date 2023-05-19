@@ -16,7 +16,7 @@ import Slider from "react-slick";
 const TrailersDetailPage = () => {
 
     const {detailId} = useParams()
-    const {trailers, error, loader} = useAppSelector(state => state.trailersSlice)
+    const {trailers, error} = useAppSelector(state => state.trailersSlice)
     const dispatch = useAppDispatch()
 
     const fetchingTrailersPage = async (dispatch: AppDispatch) => {
@@ -32,10 +32,6 @@ const TrailersDetailPage = () => {
     useEffect(() => {
         dispatch(fetchingTrailersPage)
     }, [])
-
-    if (loader) {
-        return <div>Loading...</div>;
-    }
 
     if (error) {
         return <div>Error: {error}</div>;

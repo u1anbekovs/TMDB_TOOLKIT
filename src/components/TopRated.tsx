@@ -3,6 +3,7 @@ import {useAppSelector} from "../hooks/useAppSelector";
 import {useAppDispatch} from "../hooks/useAppDispatch";
 import {fetchingTopRated} from "../store/Reducer/ActionCreators";
 import {Link} from "react-router-dom";
+import {RiLoader3Fill} from "react-icons/ri";
 
 
 const TopRated = () => {
@@ -15,7 +16,12 @@ const TopRated = () => {
     }, [])
 
     if (loader) {
-        return <div>Loading...</div>;
+        return <div>
+            <div className="section">
+                <RiLoader3Fill className="loader"/>
+                Loading...
+            </div>
+        </div>
     }
 
 

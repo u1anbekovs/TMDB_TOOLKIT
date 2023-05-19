@@ -14,7 +14,7 @@ import Slider from "react-slick";
 const MoreMoviePage = () => {
 
     const {moreId} = useParams()
-    const {deg, error, loader} = useAppSelector(state => state.moreDegSlice)
+    const {deg, error} = useAppSelector(state => state.moreDegSlice)
     const dispatch = useAppDispatch()
 
 
@@ -32,16 +32,9 @@ const MoreMoviePage = () => {
         dispatch(fetchingDegPage)
     }, [])
 
-
-    if (loader) {
-        return <div>Loading...</div>;
-    }
-
-
     if (error) {
         return <div>Error: {error}</div>;
     }
-
 
     const settings = {
         slidesToShow: 7,

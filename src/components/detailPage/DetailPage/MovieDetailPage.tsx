@@ -10,6 +10,7 @@ import {
 } from "../../../store/Reducer/detailReducer/MovieDetailPageSlice";
 import axios from "axios";
 import {APIKEY} from "../../../Apikey/APIKEY";
+import {RiLoader3Fill} from "react-icons/ri";
 
 const MovieDetailPage = () => {
 
@@ -34,9 +35,13 @@ const MovieDetailPage = () => {
 
 
     if (loader) {
-        return <div>Loading...</div>;
+        return <div>
+            <div className="section">
+                <RiLoader3Fill className="loader"/>
+                Loading...
+            </div>
+        </div>
     }
-
 
     if (error) {
         return <div>Error: {error}</div>;

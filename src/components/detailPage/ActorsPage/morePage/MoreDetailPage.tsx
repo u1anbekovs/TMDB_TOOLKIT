@@ -10,6 +10,7 @@ import axios from "axios";
 import {APIKEY} from "../../../../Apikey/APIKEY";
 import {useParams} from "react-router-dom";
 import MoreMoviePage from "./MoreMoviePage";
+import {RiLoader3Fill} from "react-icons/ri";
 
 const MorePage = () => {
 
@@ -34,7 +35,12 @@ const MorePage = () => {
 
 
     if (loader) {
-        return <div>Loading...</div>;
+        return <div>
+            <div className="section">
+                <RiLoader3Fill className="loader"/>
+                Loading...
+            </div>
+        </div>
     }
 
     if (error) {

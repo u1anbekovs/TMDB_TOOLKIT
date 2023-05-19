@@ -1,13 +1,11 @@
-import {NavLink} from "react-router-dom";
-import {useNavigate} from "react-router-dom";
-import {useState} from "react";
+import {NavLink, useNavigate} from "react-router-dom";
+import React, {useState} from "react";
 
 
 const Header = () => {
 
     const [value, setValue] = useState('')
     const navigate = useNavigate()
-
     const handleClick = (e: any) => {
         navigate(`/search/:${e}`)
     }
@@ -15,7 +13,7 @@ const Header = () => {
     return (
         <div id="header">
             <div className="container">
-                <div className="header">
+                <div className="header">.
                     <h2>Добро пожаловать!</h2>
                     <NavLink to={'/'}>Popular</NavLink>
                     <NavLink to={'/now-playing'}>Now-Playing</NavLink>

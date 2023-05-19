@@ -5,6 +5,11 @@ export interface IMovie {
     id: number
 }
 
+export interface IReg {
+    id: number
+    poster_path: string
+}
+
 
 export interface IDetail {
     backdrop_path: string

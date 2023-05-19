@@ -15,7 +15,7 @@ import Slider from "react-slick";
 const ActorsDetailPage = () => {
 
     const {detailId} = useParams()
-    const {actors, error, loader} = useAppSelector(state => state.actorsSlice)
+    const {actors, error} = useAppSelector(state => state.actorsSlice)
     const dispatch = useAppDispatch()
 
     const fetchingActorsPage = async (dispatch: AppDispatch) => {
@@ -32,17 +32,12 @@ const ActorsDetailPage = () => {
         dispatch(fetchingActorsPage)
     }, [])
 
-    if (loader) {
-        return <div>Loading...</div>;
-    }
-
-
     if (error) {
         return <div>Error: {error}</div>;
     }
 
     const settings = {
-        slidesToShow: 6,
+        slidesToShow: 4,
         autoplay: true,
         speed: 2000,
         autoplaySpeed: 1000,

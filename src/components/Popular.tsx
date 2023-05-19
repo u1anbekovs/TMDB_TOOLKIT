@@ -3,7 +3,7 @@ import {useAppSelector} from "../hooks/useAppSelector";
 import {Link} from "react-router-dom";
 import {fetchingPopular} from "../store/Reducer/ActionCreators";
 import {useAppDispatch} from "../hooks/useAppDispatch";
-import {AiOutlineLoading3Quarters} from "react-icons/ai"
+import {RiLoader3Fill} from "react-icons/ri"
 
 
 const Popular = () => {
@@ -17,22 +17,10 @@ const Popular = () => {
 
     if (loader) {
         return <div>
-            <section className="section">
-                <span className="loader loader-quart"></span>
+            <div className="section">
+                <RiLoader3Fill className="loader"/>
                 Loading...
-            </section>
-            <section className="section section-2">
-                <span className="loader loader-double"></span>
-                Loading...
-            </section>
-            <section className="section section-3">
-                <span className="loader loader-circles"></span>
-                Loading...
-            </section>
-            <section className="section section-4">
-                <span className="loader loader-bars"><span></span></span>
-                Loading...
-            </section>
+            </div>
         </div>
     }
 
